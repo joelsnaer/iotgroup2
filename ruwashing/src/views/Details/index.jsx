@@ -5,17 +5,17 @@ import green from '../../images/green.png'
 import "../../styles/details.css";
 import Grid from '../../components/Grid';
 import Button from '../../components/Button';
-import machineService from '../../services/machineService';
+import { getStatus } from '../../actions/machineActions'
 
 const Details = () => {
     // const [washingMachines, setWashingMachines] = useState([false, true, false, true, true, false])
     const [washingMachines, setWashingMachines] = useState([])
     const [mapping, setMapping] = useState({});
+    const [status, setStatus] = useState([]);
 
     useEffect(() => {
         generateGrid()
-        let status = machineService.getStatus;
-        console.log(status);
+        setStatus(getStatus());
     }, [])
 
     // const availability = washingMachines.map((value) => {
@@ -42,11 +42,15 @@ const Details = () => {
         });
     }
 
+    const test = () => {
+        console.log(status);
+    }
+
     return (
         <div className='details'>
             {/* {availability} */}
             <Grid washingMachines={washingMachines}></Grid>
-            <Button onClick={generateMapping}>test</Button>
+            <Button onClick={test}>test</Button>
         </div>
     )
 }

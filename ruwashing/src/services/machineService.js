@@ -1,8 +1,6 @@
 const machineService = () => {
     return {
-        getStatus: (token) => fetch('127.0.0.1:5000/status', {
-            headers: {
-            }
+        getStatus: () => fetch('127.0.0.1:5000/status', {
         }).then(d => d.json()).then(d => d)
     }
 }
