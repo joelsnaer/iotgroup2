@@ -14,8 +14,15 @@ const Details = () => {
     const [status, setStatus] = useState([]);
 
     useEffect(() => {
+        fetch("127.0.0.1:5000/status")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setStatus(result);
+                }
+            )
         generateGrid()
-        setStatus(getStatus());
+        // setStatus(getStatus());
     }, [])
 
     // const availability = washingMachines.map((value) => {
