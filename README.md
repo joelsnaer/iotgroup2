@@ -1,1 +1,1 @@
-# Group 2 for Introduction to Embedded Systems and the Internet of Things
+# Group 2 for Introduction to Embedded Systems and the IoT
