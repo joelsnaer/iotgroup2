@@ -12,20 +12,22 @@ const Details = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/status", {
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-            }
-        })
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setStatus(result);
-                },
-                (error) => {
-                    setError(error);
+        if (status.machine_status === undefined) {
+            fetch("http://localhost:5000/status", {
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
                 }
-            )
+            })
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        setStatus(result);
+                    },
+                    (error) => {
+                        setError(error);
+                    }
+                )
+        }
         generateGrid()
         generateMapping()
         generateAvailability()
