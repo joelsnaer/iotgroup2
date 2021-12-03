@@ -1,6 +1,6 @@
 .washer {
-  height: 96px;
-  width: 96px;
+  height: 64px;
+  width: 64px;
   
   -webkit-user-drag: none;
   user-select: none;
@@ -9,3 +9,17 @@
   -ms-user-select: none;
 }
 
+.right {
+  padding-right: 350px;
+  display: inline-block;
+}
+
+.left {
+  padding-left: 350px;
+  display: inline-block;
+}
+
+.text {
+  margin: 0;
+  display: block;
+}

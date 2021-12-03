@@ -1,22 +1,25 @@
+import React, { useState, useEffect } from 'react'
 import black from '../../images/black.png'
 import transparent from '../../images/transparent.png'
 import red from '../../images/red.png'
 import green from '../../images/green.png'
 
-const Square = ({ rIndex, cIndex }) => {
-    let rowsToFill = [0]
-    let columnsToFill = [0, 1]
-    let value = false;
-    if (rowsToFill.includes(rIndex) || columnsToFill.includes(cIndex))
-        value = true;
-    if (rowsToFill.includes(rIndex) && columnsToFill.includes(cIndex))
-        value = false;
+const Square = ({ rIndex, cIndex, blank, map, status }) => {
+    const [color, setColor] = useState(black);
+    useEffect(() => {
+        if (status === "ON") {
+            setColor(red);
+        }
+        else if (status === "OFF") {
+            setColor(green);
+        }
+    }, [])
 
-
-    return (value ?
-        <img className="washer" src={black} alt="Available" />
+    
+    return (!blank ?
+        <img className="washer" src={color} alt="Available" />
         :
-        <img className="washer" src={transparent} alt="Not Available" />);
+        <img className="washer" src={transparent} alt="Blank" />);
 };
 
 export default Square;
