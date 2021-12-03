@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import black from '../../images/black.png'
+import gray from '../../images/gray.png'
 import transparent from '../../images/transparent.png'
 import red from '../../images/red.png'
 import green from '../../images/green.png'
 
 const Square = ({ rIndex, cIndex, blank, map, status }) => {
-    const [color, setColor] = useState(black);
+    const [color, setColor] = useState(gray);
     useEffect(() => {
         if (status === "ON") {
             setColor(red);

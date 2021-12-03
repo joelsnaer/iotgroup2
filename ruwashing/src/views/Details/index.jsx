@@ -79,13 +79,13 @@ const Details = () => {
                 </div>
                 <div className="left">
                     <div>
-                        <span>Green: Available</span>
+                        <span className="green">Green: Available</span>
                     </div>
                     <div>
-                        <span>Red: Unavailable</span>
+                        <span className="red">Red: Unavailable</span>
                     </div>
                     <div>
-                        <span>Gray: Unknown</span>
+                        <span className="gray">Gray: Unknown</span>
                     </div>
                 </div>
                 

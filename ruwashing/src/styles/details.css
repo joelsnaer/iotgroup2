@@ -23,3 +23,15 @@
   margin: 0;
   display: block;
 }
+
+.green {
+  color:lightgreen;
+}
+
+.red {
+  color:red;
+}
+
+.gray {
+  color:gray;
+}
