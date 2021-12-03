@@ -16,5 +16,5 @@ To run the frontend make sure to have [npm](https://nodejs.org/en/download/) set
 Go into the ruwashing folder and run
 ````
 npm install
-npm run
+npm start
 `````
