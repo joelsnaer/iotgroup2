@@ -4,6 +4,7 @@
 To run the backend you need to have flask installed.
 ````
  pip3 install Flask
+ pip3 install -U flask-cors
 ````
 and after that you can go into the api folder and call
 ```
