@@ -13,7 +13,7 @@ const Details = () => {
 
     useEffect(() => {
         if (status.machine_status === undefined) {
-            fetch("http://localhost:5000/status", {
+            fetch("/status", {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
@@ -88,7 +88,7 @@ const Details = () => {
                         <span className="gray">Gray: Unknown</span>
                     </div>
                 </div>
-                
+
             </div>
             <Grid washingMachines={washingMachines} map={mapping} status={status}></Grid>
         </div>

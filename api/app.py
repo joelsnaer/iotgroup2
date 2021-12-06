@@ -8,10 +8,8 @@ from typing import Dict, Iterator
 
 import flask
 import werkzeug
-from flask_cors import CORS
 
 app = flask.Flask(__name__)
-CORS(app)
 
 
 class MachineType(enum.Enum):
