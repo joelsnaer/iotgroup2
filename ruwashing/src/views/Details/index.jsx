@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/details.css";
 import Grid from '../../components/Grid';
-import Button from '../../components/Button'
 
 const Details = () => {
     const [washingMachines, setWashingMachines] = useState([])
@@ -9,22 +8,14 @@ const Details = () => {
     const [washerAvailable, setWasherAvailable] = useState(0);
     const [dryerAvailable, setDryerAvailable] = useState(0);
     const [status, setStatus] = useState([]);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         if (status.machine_status === undefined) {
-            fetch("/status", {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                }
-            })
+            fetch("/status")
                 .then(res => res.json())
                 .then(
                     (result) => {
                         setStatus(result);
-                    },
-                    (error) => {
-                        setError(error);
                     }
                 )
         }
@@ -54,8 +45,8 @@ const Details = () => {
         let dryerCounter = 0;
         if (status.machine_status !== undefined) {
             for (let i = 0; i < 19; i++) {
-                if (status.machine_status[i].ison == "OFF")
-                    if (status.machine_status[i].type == "DRYER")
+                if (status.machine_status[i].ison === "OFF")
+                    if (status.machine_status[i].type === "DRYER")
                         dryerCounter++;
                     else
                         washerCounter++;
