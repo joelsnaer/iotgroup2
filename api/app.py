@@ -104,7 +104,7 @@ def bad_request(error):
     return flask.make_response(flask.jsonify(data), 400)
 
 
-@app.route("/status")
+@app.route("/api/status")
 def laundry_room_status():
     """
     Return a json document describing the status of the laundry room.
@@ -119,7 +119,7 @@ def laundry_room_status():
     return flask.jsonify(status)
 
 
-@app.route("/machine/<int:machine_id>")
+@app.route("/api/machine/<int:machine_id>")
 def update_machine_status(machine_id: int):
     assert isinstance(machine_id, int)
     try:

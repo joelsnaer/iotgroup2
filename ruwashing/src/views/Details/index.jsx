@@ -11,7 +11,7 @@ const Details = () => {
 
     useEffect(() => {
         if (status.machine_status === undefined) {
-            fetch("/status")
+            fetch("/api/status")
                 .then(res => res.json())
                 .then(
                     (result) => {
