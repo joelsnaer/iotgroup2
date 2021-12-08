@@ -119,7 +119,7 @@ def laundry_room_status():
     return flask.jsonify(status)
 
 
-@app.route("/api/machine/<int:machine_id>")
+@app.route("/api/machine/<int:machine_id>", methods=["PUT"])
 def update_machine_status(machine_id: int):
     assert isinstance(machine_id, int)
     try:
@@ -138,6 +138,7 @@ def update_machine_status(machine_id: int):
     except KeyError:
         flask.abort(400, f"Invalid status {status_str}")
     machine.update_status(status)
+    return flask.jsonify(machine.to_jsonable())
 
 
 # Initializing the machine
