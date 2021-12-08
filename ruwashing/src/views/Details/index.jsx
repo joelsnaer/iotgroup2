@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import "../../styles/details.css";
-import Grid from '../../components/Grid';
+import "../../styles/flex.css";
+import Header from '../../components/Header'
+import Machines from '../../components/Machines'
+import Availability from '../../components/Availability';
+import Legend from '../../components/Legend'
 
 const Details = () => {
-    const [washingMachines, setWashingMachines] = useState([])
-    const [mapping, setMapping] = useState({});
-    const [washerAvailable, setWasherAvailable] = useState(0);
-    const [dryerAvailable, setDryerAvailable] = useState(0);
     const [status, setStatus] = useState([]);
-
     useEffect(() => {
         if (status.machine_status === undefined) {
             fetch("/api/status")
@@ -19,69 +17,29 @@ const Details = () => {
                     }
                 )
         }
-        generateGrid()
-        generateMapping()
-        generateAvailability()
     }, [status])
 
-    const generateGrid = () => {
-        setWashingMachines([])
-        for (let i = 0; i < 7; i++) {
-            setWashingMachines(washingMachines => [...washingMachines, [[""], [""], [""], [""], [""], [""], [""], [""], [""]]])
-        }
-    }
-
-    const generateMapping = () => {
-        setMapping({
-            ...mapping,
-            '6 0': 0, '5 0': 1, '4 0': 2, '3 0': 3, '2 0': 4, '1 0': 5, '6 1': 6,
-            '5 1': 7, '4 1': 8, '3 1': 9, '2 1': 10, '1 1': 11, '0 2': 12,
-            '0 3': 13, '0 4': 14, '0 5': 15, '0 6': 16, '0 7': 17, '0 8': 18
-        });
-    }
-
-    const generateAvailability = () => {
-        let washerCounter = 0;
-        let dryerCounter = 0;
-        if (status.machine_status !== undefined) {
-            for (let i = 0; i < 19; i++) {
-                if (status.machine_status[i].ison === "OFF")
-                    if (status.machine_status[i].type === "DRYER")
-                        dryerCounter++;
-                    else
-                        washerCounter++;
-            }
-            setDryerAvailable(dryerCounter);
-            setWasherAvailable(washerCounter);
-        }
-    }
-
     return (
-        <div className='details'>
-            <h1>R U Washing?</h1>
-            <div>
-                <div className="right">
-                    <div>
-                        <span>Washing: {washerAvailable} available</span>
+        <div>
+        <Header />
+            <div className="wrapper">
+                <div className="dryers">
+                    <Machines status={status} type={'DRYER'}/>
+                </div>
+                <div className="container">
+                    <div className="washers">
+                        <Machines status={status} type={'WASHING'} />
                     </div>
-                    <div>
-                        <span>Dryers: {dryerAvailable} available</span>
+                    <div className="information">
+                        <div className="panel p-1">
+                            <Availability status={status}/>
+                        </div>
+                        <div className="panel p-2">
+                            <Legend/>
+                        </div>
                     </div>
                 </div>
-                <div className="left">
-                    <div>
-                        <span className="green">Green: Available</span>
-                    </div>
-                    <div>
-                        <span className="red">Red: Unavailable</span>
-                    </div>
-                    <div>
-                        <span className="gray">Gray: Unknown</span>
-                    </div>
-                </div>
-
             </div>
-            <Grid washingMachines={washingMachines} map={mapping} status={status}></Grid>
         </div>
     )
 }

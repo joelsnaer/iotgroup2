@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+  width: 50%;
+}
+
+.line {
+    border-bottom: 1px solid #5a4ae3;
+    margin-bottom: 10px;
+}
+
+.machine {
+  width: 62.73px;
+  height: 76px;
+  
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 800px; /* Adjust this to your needs */
+    height: 610px; /* Adjust this to your needs */
+    /* background-color: #AAAAAA; */
+}
+
+.dryers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* IDK MENS */
+
+    width: 77%; /* Adjust this to your needs */
+    margin-left: 21.5%; /* Adjust this to your needs */
+    height: 14%; /* Adjust this to your needs */
+    background-color: blue;
+    background: rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 86%;
+}
+
+.washers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+
+    width: 20%; /* Adjust this to your needs */
+    height: 90%; /* Adjust this to your needs */
+    margin-top: 2%;
+    border-radius: 10px;
+    /* background-color: green; */
+    background: rgba(204, 204, 204, 0.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+.panel {
+    /* background-color: #AAAAAA; */
+    background: rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    width: 96%;
+    margin: 2%;
+    height: 46%;
+}
+
+.available {
+    width: 35%;
+}
+
+.availability {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.availabilityText {
+    font-size: 34px;
+    margin: 0px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 12%;
+}
+
+.legendItem {
+    width: 20%;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.gray {
+    color: gray;
+}
+
+.legendMachine {
+    width: 45px;
+    height: 54.55px;
+}
+
+.availabilityMachine {
+    width: 67px;
+    height: 82.44px;
+}
