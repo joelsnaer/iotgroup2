@@ -8,12 +8,19 @@ import Legend from '../../components/Legend'
     --- Details view ---
     This is the main and only view of the website.
     It displays all of the data from the backend so that the user can see it.
+
+    Starts with sending a request to the backend to get the server whenever the website loads.
+
+    Then it returns the view with the data for the user to see
+
+    The view is set up in this format:
+    It is displayed as a flexbox, we split it up into 4 sections.
+    A top horizontal bar to show the dryers,
+    a left side vertical bar to show the washers on the website
+    and two panels positioned in a row under the top bar and to the right of the left side bar.
 */
 
 const Details = () => {
-    /*
-        This sends a request to backend to get the server whenever the website loads.
-    */
     const [status, setStatus] = useState([]);
     useEffect(() => {
         if (status.machine_status === undefined) {
@@ -27,13 +34,6 @@ const Details = () => {
         }
     }, [status])
 
-    /*
-        The general set up or the website.
-        It is displayed as a flexbox, we split it up into 4 sections.
-        A top horizontal bar to show the dryers,
-        a left side vertical bar to show the washers on the website
-        and two panels positioned in a row under the top bar and to the right of the left side bar.
-    */
     return (
         <div>
         <Header />
