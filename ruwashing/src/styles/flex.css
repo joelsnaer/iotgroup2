@@ -33,19 +33,18 @@ body {
     display: flex;
     flex-direction: column;
 
-    width: 800px; /* Adjust this to your needs */
-    height: 610px; /* Adjust this to your needs */
-    /* background-color: #AAAAAA; */
+    width: 800px; 
+    height: 610px; 
 }
 
 .dryers {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* IDK MENS */
+    justify-content: center;
 
-    width: 77%; /* Adjust this to your needs */
-    margin-left: 21.5%; /* Adjust this to your needs */
-    height: 14%; /* Adjust this to your needs */
+    width: 77%;
+    margin-left: 21.5%; 
+    height: 14%; 
     background-color: blue;
     background: rgba(204, 204, 204, 0.5);
     border-radius: 10px;
@@ -66,11 +65,10 @@ body {
     flex-wrap: wrap-reverse;
     justify-content: center;
 
-    width: 20%; /* Adjust this to your needs */
-    height: 90%; /* Adjust this to your needs */
+    width: 20%; 
+    height: 90%; 
     margin-top: 2%;
     border-radius: 10px;
-    /* background-color: green; */
     background: rgba(204, 204, 204, 0.5);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -82,11 +80,9 @@ body {
     flex-direction: column;
     width: 80%;
     height: 100%;
-    /* background-color: aqua; */
 }
 
 .panel {
-    /* background-color: #AAAAAA; */
     background: rgba(204, 204, 204, 0.5);
     border-radius: 10px;
     width: 96%;
