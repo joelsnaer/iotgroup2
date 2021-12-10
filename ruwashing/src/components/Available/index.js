@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import washer from '../../images/washers/washer.png'
 import dryer from '../../images/dryers/dryer.png'
-
+/*
+    --- Available component ---
+    Takes in the type of a machine and some text as parameters.
+    Generates an image of the machine type and adds the text below it as a caption
+    Similar to the LegendItem component
+*/
 
 const Available = ({ type, text }) => {
     const [machine, setMachine] = useState(washer);

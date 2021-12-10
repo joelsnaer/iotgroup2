@@ -1,6 +1,9 @@
 import React from 'react'
 import Available from '../Available'
-
+/*
+    --- Availability component ---
+    Creates the panel for availability, has a header and calls two of the Available component
+*/
 
 const Availability = ({ status }) => {
     return (

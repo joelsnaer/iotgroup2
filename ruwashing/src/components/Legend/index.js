@@ -1,5 +1,10 @@
 import React from 'react'
 import LegendItem from '../LegendItem'
+/*
+    --- Legend component ---
+    Creates the panel for the legend.
+    Calls the LegendItem component for the panel
+*/
 
 const Legend = () => {
 
